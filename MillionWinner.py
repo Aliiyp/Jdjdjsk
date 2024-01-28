@@ -66,11 +66,11 @@ def rules(callback: CallbackQuery):
 
 • كل سؤال له وقت محدد للإجابه ( 60 ثانيه ).
 
-• مع كل سؤال صحيح تزداد ميزانيتك.
+• مع كل سؤال صحيح تزداد فلوسَك. 
 
-• اذا قمت بإجابه خاطئه يتم تصفية ميزانيتك بالكامل.
+• اذا قمت بإجابه خاطئه يتم تصفية فلوسَك بالكامل.
 
-• عند الوصول للمليون سيتم اضافتك لقائمة الشرف.
+• عند الوصول للمليون سيتم اضافتك لقائمة الاشراف.
 """
     markup = Keyboard(
         [
@@ -145,7 +145,7 @@ def play(callback: CallbackQuery):
         ])# @elhyba & @up_uo
     caption = f"""
 - اللاعب {user}
-- ميزانيتك : {users[str(user_id)]["budget"]}
+- فلوسَك : {users[str(user_id)]["budget"]}
 
 - السؤال :
 {question}
@@ -198,7 +198,7 @@ def get_answer(callback: CallbackQuery):
         caption = f"""
 - اللاعب {user}
 - آجابه خاطئه
-- تم تصفية ميزانيتك
+- تم تصفية فلوسَك
 """
         bot.edit_message_text(
             chat_id=chat_id,
@@ -224,7 +224,7 @@ def get_answer(callback: CallbackQuery):
         caption =f"""
 - اللاعب {user}
 - تهانينا لقد وصلت إلى نهاية اللعبه
-- اصبحت ميزانيتك :  {users[str(user_id)]["budget"]}
+- اصبحت فلوسَك :  {users[str(user_id)]["budget"]}
 - تمت إضافك إلى قائمة أفضل اللاعبين.
 - سيظهر الأيدي الخاص بك عندما تضغط /start
 """
@@ -253,7 +253,7 @@ def get_answer(callback: CallbackQuery):
     caption = f"""
 - اللاعب {user}
 - إجابه صحيحه.
-- ميزانيتك : {users[str(user_id)]["budget"]}
+- فلوسَك : {users[str(user_id)]["budget"]}
 
 - السؤال :
 {question}
